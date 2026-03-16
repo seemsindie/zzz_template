@@ -2,7 +2,7 @@
     .name = .zzz_template,
     .version = "0.1.0",
     .fingerprint = 0x17e7fe912bdc4ef7,
-    .minimum_zig_version = "0.16.0-dev.2535+b5bd49460",
+    .minimum_zig_version = "0.16.0-dev.2905+5d71e3051",
     .dependencies = .{},
     .paths = .{
         "build.zig",
