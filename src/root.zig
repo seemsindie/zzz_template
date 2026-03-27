@@ -1,4 +1,4 @@
-//! zzz_template - Standalone Template Engine from the Zzz Web Framework
+//! pidgn_template - Standalone Template Engine from the Pidgn Web Framework
 //!
 //! A comptime Mustache-like template engine with HTML escaping, conditionals,
 //! loops, partials, pipes, and named yield blocks.

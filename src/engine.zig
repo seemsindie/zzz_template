@@ -536,9 +536,9 @@ fn makeTemplateType(comptime segments: []const Segment) type {
 ///
 /// Usage:
 /// ```
-/// const tmpl = zzz.template(@embedFile("templates/index.html.zzz"));
+/// const tmpl = pidgn.template(@embedFile("templates/index.html.pidgn"));
 ///
-/// fn handler(ctx: *zzz.Context) !void {
+/// fn handler(ctx: *pidgn.Context) !void {
 ///     try ctx.render(tmpl, .ok, .{ .title = "Hello" });
 /// }
 /// ```
@@ -550,11 +550,11 @@ pub fn template(comptime source: []const u8) type {
 ///
 /// Usage:
 /// ```
-/// const Page = zzz.templateWithPartials(
-///     @embedFile("templates/page.html.zzz"),
+/// const Page = pidgn.templateWithPartials(
+///     @embedFile("templates/page.html.pidgn"),
 ///     .{
-///         .header = @embedFile("templates/partials/header.html.zzz"),
-///         .footer = @embedFile("templates/partials/footer.html.zzz"),
+///         .header = @embedFile("templates/partials/header.html.pidgn"),
+///         .footer = @embedFile("templates/partials/footer.html.pidgn"),
 ///     },
 /// );
 /// ```

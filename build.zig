@@ -4,7 +4,7 @@ pub fn build(b: *std.Build) void {
     const target = b.standardTargetOptions(.{});
     const optimize = b.standardOptimizeOption(.{});
 
-    _ = b.addModule("zzz_template", .{
+    _ = b.addModule("pidgn_template", .{
         .root_source_file = b.path("src/root.zig"),
         .target = target,
         .optimize = optimize,

@@ -1,6 +1,6 @@
-# zzz_template
+# pidgn_template
 
-Compile-time template engine for the zzz web framework.
+Compile-time template engine for the pidgn web framework.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Zig](https://img.shields.io/badge/Zig-0.16.0-orange.svg)](https://ziglang.org/)
@@ -25,10 +25,10 @@ A Mustache-like template engine that parses templates entirely at comptime. Temp
 ## Quick Start
 
 ```zig
-const zzz = @import("zzz");
+const pidgn = @import("pidgn");
 
 // Compile template at comptime
-const Template = zzz.template(
+const Template = pidgn.template(
     \\<h1>Hello, {{name}}!</h1>
     \\{{#if show_email}}
     \\  <p>Email: {{email}}</p>
@@ -39,7 +39,7 @@ const Template = zzz.template(
 );
 
 // Render at runtime
-fn handler(ctx: *zzz.Context) !void {
+fn handler(ctx: *pidgn.Context) !void {
     try ctx.render(Template, .ok, .{
         .name = "Alice",
         .show_email = true,
@@ -55,7 +55,7 @@ fn handler(ctx: *zzz.Context) !void {
 ### Layouts
 
 ```zig
-const Layout = zzz.template(
+const Layout = pidgn.template(
     \\<html>
     \\<head>{{{yield_head}}}</head>
     \\<body>
@@ -65,12 +65,12 @@ const Layout = zzz.template(
     \\</html>
 );
 
-const Page = zzz.template(
+const Page = pidgn.template(
     \\<h1>{{title}}</h1>
     \\<p>{{body}}</p>
 );
 
-fn handler(ctx: *zzz.Context) !void {
+fn handler(ctx: *pidgn.Context) !void {
     try ctx.renderWithLayout(Layout, Page, .ok, .{
         .title = "My Page",
         .body = "Page content here.",
@@ -129,18 +129,18 @@ zig build test   # Run tests
 
 ## Documentation
 
-Full documentation available at [docs.zzz.indielab.link](https://docs.zzz.indielab.link) under the Templates section.
+Full documentation available at [docs.pidgn.indielab.link](https://docs.pidgn.indielab.link) under the Templates section.
 
 ## Ecosystem
 
 | Package | Description |
 |---------|-------------|
-| [zzz.zig](https://github.com/seemsindie/zzz.zig) | Core web framework |
-| [zzz_db](https://github.com/seemsindie/zzz_db) | Database ORM (SQLite + PostgreSQL) |
-| [zzz_jobs](https://github.com/seemsindie/zzz_jobs) | Background job processing |
-| [zzz_mailer](https://github.com/seemsindie/zzz_mailer) | Email sending |
-| [zzz_template](https://github.com/seemsindie/zzz_template) | Template engine |
-| [zzz_cli](https://github.com/seemsindie/zzz_cli) | CLI tooling |
+| [pidgn.zig](https://github.com/seemsindie/pidgn.zig) | Core web framework |
+| [pidgn_db](https://github.com/seemsindie/pidgn_db) | Database ORM (SQLite + PostgreSQL) |
+| [pidgn_jobs](https://github.com/seemsindie/pidgn_jobs) | Background job processing |
+| [pidgn_mailer](https://github.com/seemsindie/pidgn_mailer) | Email sending |
+| [pidgn_template](https://github.com/seemsindie/pidgn_template) | Template engine |
+| [pidgn_cli](https://github.com/seemsindie/pidgn_cli) | CLI tooling |
 
 ## Requirements
 
